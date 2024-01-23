@@ -16,6 +16,30 @@
 // Create game function
     // plays a best of 5 rounds that keeps score and reports overall winner or loser
 
+function getComputerChoice(){
+    const choice = ["ROCK", "PAPER", "SCISSORS"];
+    const randomChoice = Math.floor(Math.random() * choice.length);
+    return(choice[randomChoice]);
+}
+
+let playerInput = prompt("Rock, Paper, Scissors?");
+let playerSelection = playerInput.toUpperCase();
+    if (playerSelection != "ROCK" && playerSelection != "PAPER" && playerSelection != "SCISSORS"){
+        console.log("Sorry, not a valid choice, try again")
+        
+    }
+    else {
+        console.log(playerSelection);
+    }
+
+const computerSelection = getComputerChoice();
+console.log("CPU got:",computerSelection);
+
+
+
+
+
+
 
 
 
