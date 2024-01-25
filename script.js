@@ -8,13 +8,13 @@
     // store input in playerSelection
         // make sure result == Rock/Paper/Scissors, return error if wrong
 
-// Create playRound function
+// Create playRound function - DONE
     // if playerSelection loses to computerSelection return string "You Lose! x beats y"
     // if playerSelection wins to computerSelection return string "You Win! x beats y"
     // if TIE then replay the round
 
 
-// Create game function
+// Create game function - DONE
     // plays a best of 5 rounds that keeps score and reports overall winner or loser
 
 function getComputerChoice(computerSelection){
@@ -72,20 +72,62 @@ function playRound(playerSelection, computerSelection){
     }
 }
 
-function game(playerSelection, computerSelection){
+function game(playerSelection, computerSelection, score){
+    score = 0
     const roundOne = playRound();
+    if (roundOne == "WIN"){
+        score++;
+    }
+    else if (roundOne == "LOSE"){
+        score--;
+    }
     console.log("Round 1: ", roundOne);
     const roundTwo = playRound();
+    if (roundTwo == "WIN"){
+        score++;
+    }
+    else if (roundTwo == "LOSE"){
+        score--;
+    }
     console.log("Round 2: ", roundTwo);
     const roundThree = playRound();
+    if (roundThree == "WIN"){
+        score++;
+    }
+    else if (roundThree == "LOSE"){
+        score--;
+    }
     console.log("Round 3: ", roundThree);
     const roundFour = playRound();
+    if (roundFour == "WIN"){
+        score++;
+    }
+    else if (roundFour == "LOSE"){
+        score--;
+    }
     console.log("Round 4: ", roundFour);
     const roundFive = playRound();
+    if (roundFive == "WIN"){
+        score++;
+    }
+    else if (roundFive == "LOSE"){
+        score--;
+    }
     console.log("Round 5: ", roundFive);
+    if (score < 0){
+        return "BEST OF 5: LOSER";
+    }
+    else if (score > 0){
+        return "BEST OF 5: WINNER";
+    }
+    else {
+        return "BEST OF 5: TIE";
+    }
 }
 
+
 const winner = game();
+console.log(winner);
 
 
 
