@@ -45,7 +45,7 @@ function playRound(playerSelection, computerSelection){
 
     if (playerSelection == computerSelection) {
         console.log("TIE! Try again!");
-        return "TIE";
+        return playRound();
     }
     else if(playerSelection == "ROCK" && computerSelection == "PAPER"){
         console.log("You Lose! Paper beats Rock!")
